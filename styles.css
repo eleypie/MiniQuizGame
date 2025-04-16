@@ -19,42 +19,52 @@ body {
     padding: 0;
     line-height: 1.6;
     overflow-x: hidden;
+    background-color: var(--light-color);
+    /* 
     background: var(--background-image) no-repeat center center fixed;
     background-size: cover;
+     */
 }
 
 /* Particles Background */
+/* Container for all floating particles - covers entire viewport */
 .particles {
-    position: fixed;
+    position: fixed; /* Stays in place during scrolling */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
+    width: 100%; /* Full viewport width */
+    height: 100%; /* Full viewport height */
+    z-index: -1; /* Renders behind all other content */
+    overflow: hidden; /* Prevents scrollbars from particle movement */
 }
 
+/* Individual particle styling */
 .particle {
-    position: absolute;
-    background-color: rgba(184, 0, 31, 0.05);
-    border-radius: 50%;
-    animation: floatParticle linear infinite;
+    position: absolute; /* Positions freely within container */
+    background-color: rgba(184, 0, 31, 0.36); /* Semi-transparent red */
+    border-radius: 50%; /* Makes particles circular */
+    animation: floatParticle linear infinite; /* Continuous float animation */
 }
 
+/* Particle floating animation */
 @keyframes floatParticle {
+    /* Start position (fully transparent) */
     0% {
-        transform: translateY(0) translateX(0);
-        opacity: 0;
+        transform: translateY(0) translateX(0); /* Original position */
+        opacity: 0; /* Invisible */
     }
+    /* Fade in quickly */
     10% {
-        opacity: 1;
+        opacity: 1; /* Fully visible */
     }
+    /* Stay visible while moving */
     90% {
-        opacity: 1;
+        opacity: 1; /* Remain visible */
     }
+    /* End position (faded out and moved up/right) */
     100% {
-        transform: translateY(-100vh) translateX(100px);
-        opacity: 0;
+        transform: translateY(-100vh) translateX(100px); /* Moves up 1 viewport height and right 100px */
+        opacity: 0; /* Fades out */
     }
 }
 
@@ -300,7 +310,7 @@ body {
 /* Topics Section */
 .topics-section {
     padding: 6rem 2rem;
-    background-color: var(--background-image);
+    background-color:rgba(229, 232, 235, 0.29);
     position: relative;
 }
 
@@ -524,7 +534,6 @@ body {
 /* ===== About Section Styles ===== */
 .about-section {
     padding: 6rem 2rem;
-    background-color: var(--background-image);
     position: relative;
     overflow: hidden;
   }
@@ -729,99 +738,6 @@ body {
     }
   }
 
-
-
-/* Footer 
-.site-footer {
-    background-color: var(--dark-color);
-    color: white;
-    padding: 4rem 2rem 2rem;
-}
-
-.footer-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-brand {
-    max-width: 300px;
-}
-
-.footer-logo {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    color: white;
-    margin-bottom: 1rem;
-}
-
-.footer-brand p {
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-}
-
-.social-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    color: white;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    background: var(--primary-color);
-    transform: translateY(-3px);
-}
-
-.links-column h4 {
-    font-family: var(--font-heading);
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    color: white;
-}
-
-.links-column ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.links-column li {
-    margin-bottom: 0.75rem;
-}
-
-.links-column a {
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.links-column a:hover {
-    color: white;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 3rem;
-    margin-top: 3rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.9rem;
-}
-*/
 /* Responsive */
 @media (max-width: 992px) {
     .hero-container {
