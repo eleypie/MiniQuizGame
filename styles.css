@@ -462,6 +462,8 @@ body {
     box-shadow: 0 4px 6px rgba(184, 0, 31, 0.1);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    text-decoration: none;
+    text-align: center;
 }
 
 .play-button:hover {
