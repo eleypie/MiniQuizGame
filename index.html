@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizmo - Interactive Quiz Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="img/page-icon.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons (for the social media icons) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+</head>
+
+<body>
+    <!-- Floating Particles Background -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <!-- Add more particles as needed -->
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="#" class="logo">Quizmo</a>
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#topics">Topics</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+            <a href="#topics" class="start-btn">Start Quiz</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="quizmo">Test Your Knowledge</h1>
+                <p class="tagline">What are the defining moments of today, here and abroad? Find out with Quizmo </p>
+                <div class="line"></div>
+                <p class="description">Challenge yourself with our interactive quizzes on Quizmo!</p>
+                <a href="#topics" class="cta-button">
+                    Explore Topics
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="hero-image">
+                <div class="hexagon-container">
+                    <div class="hexagon"></div>
+                    <div class="hexagon"></div>
+                    <div class="hexagon"></div>
+                </div>
+                <img src="img/brain-logo.png" alt="brain-logo-image" class="brain-logo">
+            </div>
+        </div>
+    </section>
+
+   
+
+   <!-- Topics Section -->
+<section id="topics" class="topics-section">
+    <div class="section-header">
+        <h2 class="topic-section-title">Pick a Topic & Start Buzzing!</h2>
+        <p class="topic-section-subtitle">CHOOSE A HIVE OF KNOWLEDGE! EACH TOPIC HAS 5 QUESTIONS. TEST YOUR SKILLS AND COLLECT HONEY POINTS!</p>
+    </div>
+
+    <div class="topic-grid">
+        <!-- Topic Cards -->
+        <div class="topic-card">
+            <div class="card-badge">Popular</div>
+            <div class="card-icon">🌎</div>
+            <h3>International News</h3>
+            <p>Test your global awareness with current events</p>
+            <div class="card-footer">
+                <span class="question-count">5 Questions</span>
+                <span class="honey-points">+50 Points</span>
+            </div>
+            <button class="play-button">Play Now</button>
+            <div class="card-hover"></div>
+        </div>
+        
+        <!-- Repeat for other topics -->
+        <div class="topic-card">
+            <div class="card-icon">🗳️</div>
+            <h3>Midterm Election</h3>
+            <p>How well do you know political processes?</p>
+            <div class="card-footer">
+                <span class="question-count">5 Questions</span>
+                <span class="honey-points">+50 Points</span>
+            </div>
+            <button class="play-button">Start Quiz</button>
+            <div class="card-hover"></div>
+        </div>
+        
+        <div class="topic-card">
+            <div class="card-badge">New</div>
+            <div class="card-icon">📰</div>
+            <h3>Duterte Era</h3>
+            <p>Quiz about recent political history</p>
+            <div class="card-footer">
+                <span class="question-count">5 Questions</span>
+                <span class="honey-points">+50 Points</span>
+            </div>
+            <button class="play-button">Play Now</button>
+            <div class="card-hover"></div>
+        </div>
+        
+        <div class="topic-card">
+            <div class="card-icon">📱</div>
+            <h3>Present News</h3>
+            <p>Current events and trending topics</p>
+            <div class="card-footer">
+                <span class="question-count">5 Questions</span>
+                <span class="honey-points">+50 Points</span>
+            </div>
+            <button class="play-button">Start Quiz</button>
+            <div class="card-hover"></div>
+        </div>
+    </div>
+</section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number" data-count="1000">0</div>
+                <div class="stat-label">Quizzes Taken</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-count="250">0</div>
+                <div class="stat-label">Active Users</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-count="50">0</div>
+                <div class="stat-label">Topics Available</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-count="10000">0</div>
+                <div class="stat-label">Honey Points Earned</div>
+            </div>
+        </div>
+    </section>
+
+     <!-- About Section -->
+<section id="about" class="about-section">
+    <div class="about-container">
+      <!-- Decorative elements -->
+      <div class="about-hexagon"></div>
+      <div class="about-pattern"></div>
+      
+      <div class="about-content">
+        <h2 class="about-section-title">
+          <span class="about-title-text">About Quizmo</span>
+        </h2>
+        
+        <div class="about-grid">
+          <!-- Mission Card -->
+          <div class="about-card">
+            <div class="card-icon">🎯</div>
+            <h3>Our Mission</h3>
+            <p>To make learning fun through bite-sized quizzes that challenge your knowledge and reward your curiosity.</p>
+          </div>
+          
+          <!-- Story Card -->
+          <div class="about-card">
+            <div class="card-icon">📜</div>
+            <h3>Our Story</h3>
+            <p>Founded in 2025, Quizmo began as a passion project by trivia enthusiasts and has grown into a community of knowledge seekers.</p>
+          </div>
+          
+          <!-- Values Card -->
+          <div class="about-card">
+            <div class="card-icon">❤️</div>
+            <h3>Our Values</h3>
+            <ul class="values-list">
+              <li>Learning through play</li>
+              <li>Local & global insights</li>
+              <li>Empowering knowledge</li>
+              <li>Real-time relevance</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="about-team">
+          <h3>Meet The Team</h3>
+          <div class="team-members">
+            <div class="member">
+              <div class="member-avatar" style="background-color: #FFCE32;">LC</div>
+              <h4>Loriel Coniconde</h4>
+              <p>UI/UX & Frontend</p>
+            </div>
+            <div class="member">
+              <div class="member-avatar" style="background-color: #B8001F;">RD</div>
+              <h4>Roanne Dinglasa</h4>
+              <p>UI/UX & JS Developer</p>
+            </div>
+            <div class="member">
+              <div class="member-avatar" style="background-color: #495057;">KM</div>
+              <h4>Kristina Marzan</h4>
+              <p>Content Creator</p>
+            </div>
+            <div class="member">
+                <div class="member-avatar" style="background-color: #5e3463;">AN</div>
+                <h4>Annic Narisma</h4>
+                <p>Frontend</p>
+              </div>
+              <div class="member">
+                <div class="member-avatar" style="background-color: #363463;">JP</div>
+                <h4>Jhoryl Porcalla</h4>
+                <p>JS Developer</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+     <footer class="footer bg-danger">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-4 mt-4 col-lg-3 text-center text-sm-start">
+                    <div class="information">
+                        <h6 class="footer-heading text-uppercase text-white fw-bold">Information</h6>
+                        <ul class="list-unstyled footer-link mt-4">
+                            <li class="mb-1"><a href="https://codepen.io/Gaurav-Rana-the-reactor" class="text-white text-decoration-none fw-semibold">Home</a></li>
+                            <li class="mb-1"><a href="https://codepen.io/Gaurav-Rana-the-reactor" class="text-white text-decoration-none fw-semibold">Topics</a></li>
+                            <li class="mb-1"><a href="https://codepen.io/Gaurav-Rana-the-reactor" class="text-white text-decoration-none fw-semibold">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 mt-4 col-lg-3 text-center text-sm-start">
+                    <div class="resources">
+                        <h6 class="footer-heading text-uppercase text-white fw-bold">Resources</h6>
+                        <ul class="list-unstyled footer-link mt-4">
+                            <li class="mb-1"><a href="https://codepen.io/Gaurav-Rana-the-reactor" class="text-white text-decoration-none fw-semibold">GitHub Repository</a></li>
+                            <li class="mb-1"><a href="https://codepen.io/Gaurav-Rana-the-reactor" class="text-white text-decoration-none fw-semibold">Quiz API Documentation</a></li>
+                            <li class="mb-1"><a href="https://codepen.io/Gaurav-Rana-the-reactor" class="text-white text-decoration-none fw-semibold">Report Bugs</a></li>
+                            <li class=""><a href="https://codepen.io/Gaurav-Rana-the-reactor" class="text-white text-decoration-none fw-semibold">Contribute Questions</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 mt-4 col-lg-2 text-center text-sm-start">
+                  <div class="social">
+                      <h6 class="footer-heading text-uppercase text-white fw-bold">Social</h6>
+                      <ul class="list-inline my-4">
+                        <li class="list-inline-item"><a href="https://codepen.io/Gaurav-Rana-the-reactor" class="text-white btn-sm btn btn-primary mb-2"><i class="bi bi-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="https://codepen.io/Gaurav-Rana-the-reactor" class="text-danger btn-sm btn btn-light mb-2"><i class="bi bi-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="https://codepen.io/Gaurav-Rana-the-reactor" class="text-white btn-sm btn btn-primary mb-2"><i class="bi bi-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="https://codepen.io/Gaurav-Rana-the-reactor" class="text-white btn-sm btn btn-success mb-2"><i class="bi bi-whatsapp"></i></a></li>
+                    </ul>
+                  </div>
+              </div>
+                <div class="col-sm-6 col-md-6 mt-4 col-lg-4 text-center text-sm-start">
+                  <div class="contact">
+                      <h6 class="footer-heading text-uppercase text-white fw-bold">Contact Us</h6>
+                      <address class="mt-4 m-0 text-white mb-1"><i class="bi bi-pin-map fw-semibold"></i> Manila , Phase 8B , 160055</address>
+                      <a href="tel:+" class="text-white mb-1 text-decoration-none d-block fw-semibold"><i class="bi bi-telephone"></i>  909090XXXX</a>
+                      <a href="mailto:" class="text-white mb-1 text-decoration-none d-block fw-semibold"><i class="bi bi-envelope"></i> Quizmo@gmail.com</a>
+                      <a href="" class="text-white text-decoration-none fw-semibold"><i class="bi bi-skype"></i> Quizmomail</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center bg-dark text-white mt-4 p-1">
+            <p class="mb-0 fw-bold">2025 © Quizmo, All Rights Reserved</p>
+        </div>
+      </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
