@@ -11,11 +11,12 @@ let incorrectAnswers = [];
 const question = document.getElementById("question");
 const choiceLetter = document.querySelectorAll(".choice-letter");
 const choiceText = document.querySelectorAll(".choice-text");
-const choices = document.querySelectorAll(".choices");
+const choices = document.querySelectorAll(".choice-btn");
 const timerDisplay = document.getElementById("time");
 const scoreDisplay = document.getElementById("score");
 const progressBar = document.querySelector(".progress-bar");
 const numDisplay = document.getElementById("num");
+
 
 // Timer Functions
 function startTimer() {
@@ -84,10 +85,13 @@ function displayQuestion() {
     if(!paused) {
         startTimer();
     }
+
+    console.log("Current Question Index:", currentQuestionIndex);
+    console.log("Current Question:", questionData.question);
 }
 
 function nextQuestion() {
-    currentQuestionIndex++;
+    currentQuestionIndex += 1;
     if(currentQuestionIndex < setQ1.length) {
         displayQuestion();
     } else {
@@ -95,33 +99,39 @@ function nextQuestion() {
     }
 }
 
+let answerLocked = false;
+
 function checkAnswer(selectedIndex) {
-    stopTimer(); // Pause timer while processing answer
-    
+    if (answerLocked) return; // Prevent double-clicks
+    answerLocked = true;
+
+    stopTimer();
+
     const questionData = setQ1[currentQuestionIndex];
     const isCorrect = selectedIndex == questionData.correct;
-    
-    if(isCorrect) {
-        currentScore += 20; // 20 points per correct answer
+
+    if (isCorrect) {
+        currentScore += 20;
         scoreDisplay.textContent = currentScore;
     } else {
-        // Store incorrect answer for review
         incorrectAnswers.push({
             question: questionData.question,
             userAnswer: questionData.answers[selectedIndex],
             correctAnswer: questionData.answers[questionData.correct]
         });
     }
-    
-    // Visual feedback
+
+    const choices = document.querySelectorAll('.choice-btn');
     const selectedButton = choices[selectedIndex];
-    selectedButton.classList.add(isCorrect ? 'correct' : 'incorrect');
-    
+    selectedButton.classList.add(isCorrect ? 'correct-answer' : 'incorrect-answer');
+
     setTimeout(() => {
-        selectedButton.classList.remove('correct', 'incorrect');
+        selectedButton.classList.remove('correct-answer', 'incorrect-answer');
+        answerLocked = false;
         nextQuestion();
     }, 1000);
 }
+
 
 // Modal Functions
 function showResults() {

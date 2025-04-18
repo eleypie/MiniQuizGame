@@ -315,7 +315,7 @@ body {
 }
 
 .incorrect-answer {
-    background-color: #f8f9fa;
+    background-color: #e81313 !important;
     border-radius: var(--border-radius);
     padding: 1rem;
     margin-bottom: 1rem;
@@ -331,7 +331,8 @@ body {
 }
 
 .correct-answer {
-    color: #388E3C;
+    background-color: green !important;
+    color: black;
     font-weight: 600;
 }
 
