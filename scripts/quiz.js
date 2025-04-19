@@ -142,10 +142,10 @@ function checkAnswer(selectedIndex) {
 
     const choices = document.querySelectorAll('.choice-btn');
     const selectedButton = choices[selectedIndex];
-    selectedButton.classList.add(isCorrect ? 'correct-answer' : 'incorrect-answer');
+    selectedButton.classList.add(isCorrect ? 'correct' : 'incorrect');
 
     setTimeout(() => {
-        selectedButton.classList.remove('correct-answer', 'incorrect-answer');
+        selectedButton.classList.remove('correct', 'incorrect');
         answerLocked = false;
         nextQuestion();
     }, 1000);
