@@ -69,4 +69,13 @@ document.addEventListener('DOMContentLoaded', function() {
             hoverEffect.style.opacity = '0';
         });
     });
+
+    document.querySelectorAll('.play-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const selectedSet = this.getAttribute('data-set');
+            localStorage.setItem('selectedQuizSet', selectedSet);
+            window.location.href = "quiz.html";
+        });
+    });
+    
 });

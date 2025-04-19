@@ -6,6 +6,7 @@ let remainTime = 0;
 let currentScore = 0;
 let currentQuestionIndex = 0;
 let incorrectAnswers = [];
+let quizArray = [];
 
 // DOM Elements
 const question = document.getElementById("question");
@@ -16,7 +17,25 @@ const timerDisplay = document.getElementById("time");
 const scoreDisplay = document.getElementById("score");
 const progressBar = document.querySelector(".progress-bar");
 const numDisplay = document.getElementById("num");
+const selectedSetName = localStorage.getItem('selectedQuizSet');
 
+switch (selectedSetName) {
+    case "setQ1":
+        quizArray = setQ1;
+        break;
+    case "setQ2":
+        quizArray = setQ2;
+        break;
+    case "setQ3":
+        quizArray = setQ3;
+        break;
+        case "setQ4":
+        quizArray = setQ4;
+        break;
+    default:
+        alert("No quiz selected!");
+        break;
+}
 
 // Timer Functions
 function startTimer() {
@@ -59,7 +78,7 @@ function stopTimer() {
 
 function timeExpired() {
     // Handle when time runs out
-    const currentQuestion = setQ1[currentQuestionIndex];
+    const currentQuestion = quizArray[currentQuestionIndex];
     incorrectAnswers.push({
         question: currentQuestion.question,
         userAnswer: "Time Expired",
@@ -70,7 +89,7 @@ function timeExpired() {
 
 // Quiz Flow Functions
 function displayQuestion() {
-    const questionData = setQ1[currentQuestionIndex];
+    const questionData = quizArray[currentQuestionIndex];
     question.textContent = questionData.question;
     
     choiceText.forEach((choice, index) => {
@@ -79,7 +98,7 @@ function displayQuestion() {
     
     // Update progress
     numDisplay.textContent = currentQuestionIndex + 1;
-    progressBar.style.width = `${((currentQuestionIndex + 1) / setQ1.length) * 100}%`;
+    progressBar.style.width = `${((currentQuestionIndex + 1) / quizArray.length) * 100}%`;
     
     // Reset timer for each question
     if(!paused) {
@@ -92,7 +111,7 @@ function displayQuestion() {
 
 function nextQuestion() {
     currentQuestionIndex += 1;
-    if(currentQuestionIndex < setQ1.length) {
+    if(currentQuestionIndex < quizArray.length) {
         displayQuestion();
     } else {
         showResults();
@@ -107,7 +126,7 @@ function checkAnswer(selectedIndex) {
 
     stopTimer();
 
-    const questionData = setQ1[currentQuestionIndex];
+    const questionData = quizArray[currentQuestionIndex];
     const isCorrect = selectedIndex == questionData.correct;
 
     if (isCorrect) {
@@ -141,7 +160,7 @@ function showResults() {
     document.getElementById("points-earned").textContent = currentScore;
     
     // Set result message based on performance
-    const percentage = (currentScore / (setQ1.length * 20)) * 100;
+    const percentage = (currentScore / (quizArray.length * 20)) * 100;
     let message = "";
     
     if(percentage >= 80) message = "Hive Five! You're a Quizmo Champion!";

@@ -27,7 +27,7 @@ const setQ1 = [
 }
 ]
 
-const set2 = [{
+const setQ2 = [{
     question: "What are the dominant major and minor parties in the midterm poll elections?",
     answers: ["Nacionalista Party: dominant majority party, Lakas-CMD: dominant minority party", "Lakas-CMD: subordinate majority party, Nacionalista Party: subordinate minority party.", "Nacionalista Party: dominant majority party, Lakas-CMD: dominant minority party", "Lakas-CMD: dominant majority party, Nacionalista Party: dominant minority party."], 
     correct: 3
@@ -54,7 +54,7 @@ const set2 = [{
 }
 ]
 
-const set3 = [{
+const setQ3 = [{
     question: "When was former President Rodrigo Duterte arrested?",
     answers: ["March 12,2025", "March 11,2024", "March 11,2025", "March 10,2025"], 
     correct: 2
@@ -81,7 +81,7 @@ const set3 = [{
 }
 ]
 
-const set4 = [{
+const setQ4 = [{
     question: "How big is the budget for the 2025 fiscal year in the Philippines?",
     answers: ["6.35 Trillion Pesos", "6.36 Trillion Pesos", "6.35 Billion Pesos", "7.35 Trillion Pesos"], 
     correct: 0
