@@ -10,19 +10,19 @@ const setQ1 = [
         correct: 0
 }, 
     {
-        question: "When did the South Korean President declare Martial Law?",
-        answers: ["December 3, 2024", "December 4, 2024", "December 2, 2024", "December 3, 2023"], 
-        correct: 0
+        question: "Why did the South Korean President declare Martial Law?",
+        answers: ["He was on a power trip", "To protect the country from “antistate forces", "Because he felt like it", "He was pressured to do so"], 
+        correct: 1
     
 }, 
     {
-        question: "When did the South Korean President get impeached?",
-        answers: ["December 13, 2024", "December 14, 2025", "December 15, 2024", "December 14, 2024"], 
+        question: "Why did the South Korean President get impeached?",
+        answers: ["Embezzelment", "Vote Frud", "Corruption", "Abuse of Power"], 
         correct: 3
 }, 
     {
-        question: "When did Canadian Prime Minister Mark Carney want the snap election to take place? ",
-        answers: ["April 28,2024", "April 28,2025", "April 29,2025", "April 27,2025"], 
+        question: "Why did Canadian Prime Minister Mark Carney want the snap election to take place? ",
+        answers: ["Amassing power", "Reaction to Trump's Tariff", "Domestic Issues", "Felt like it"], 
         correct: 1
 }
 ]
@@ -34,13 +34,13 @@ const setQ2 = [{
 }, 
     {
         question: "According to COMELEC, how many Gen Z voters will vote in the 2025 midterm elections?",
-        answers: ["About 20 billion voters", "About 21 million voters", "About 19 million voters", "About 20 million voters"], 
-        correct: 3
+        answers: ["About 20 million voters", "About 21 million voters", "About 19 million voters", "About 20 billion voters"], 
+        correct: 0
 }, 
     {
         question: "When will the 2025 Philippine Senate election take place?",
-        answers: ["May 13, 2025", "June 12, 2025", "May 12, 2024", "May 12, 2025"], 
-        correct: 3
+        answers: ["May 13, 2025", "June 12, 2025", "May 12, 2025", "May 12, 2024"], 
+        correct: 2
 }, 
     {
         question: "What is the number of registered voters for 2025 according to COMELEC?",
