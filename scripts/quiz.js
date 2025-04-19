@@ -68,12 +68,26 @@ function updateTimer() {
     seconds = seconds < 10 ? "0" + seconds : seconds;
     minutes = minutes < 10 ? "0" + minutes : minutes;
     timerDisplay.textContent = `${minutes}:${seconds}`;
+    console.log(seconds);
 }
 
 function stopTimer() {
     paused = true;
     remainTime = quizTime;
     clearInterval(countdown);
+}
+
+function resumeQuiz() {
+    startTimer();
+    const stopQuizModal = bootstrap.Modal.getInstance(document.getElementById('exitConfirmationModal'));
+    stopQuizModal.hide();
+    console.log("test");
+}
+
+function stopQuiz() {
+    stopTimer();
+    const stopQuizModal = new bootstrap.Modal(document.getElementById('exitConfirmationModal'));
+    stopQuizModal.show();
 }
 
 function timeExpired() {
@@ -99,11 +113,6 @@ function displayQuestion() {
     // Update progress
     numDisplay.textContent = currentQuestionIndex + 1;
     progressBar.style.width = `${((currentQuestionIndex + 1) / quizArray.length) * 100}%`;
-    
-    // Reset timer for each question
-    if(!paused) {
-        startTimer();
-    }
 
     console.log("Current Question Index:", currentQuestionIndex);
     console.log("Current Question:", questionData.question);
@@ -123,9 +132,7 @@ let answerLocked = false;
 function checkAnswer(selectedIndex) {
     if (answerLocked) return; // Prevent double-clicks
     answerLocked = true;
-
-    stopTimer();
-
+    
     const questionData = quizArray[currentQuestionIndex];
     const isCorrect = selectedIndex == questionData.correct;
 
