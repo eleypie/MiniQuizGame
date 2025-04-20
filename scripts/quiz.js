@@ -219,7 +219,6 @@ function restartQuiz() {
     currentScore = 0;
     incorrectAnswers = [];
     paused = false;
-    startTimer();
     
     // Update UI
     scoreDisplay.textContent = '0';
@@ -232,6 +231,7 @@ function restartQuiz() {
     // Hide modal
     const resultsModal = bootstrap.Modal.getInstance(document.getElementById('resultsModal'));
     resultsModal.hide();
+    startTimer();
 }
 
 function quitQuiz() {
