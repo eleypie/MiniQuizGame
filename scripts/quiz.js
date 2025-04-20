@@ -42,7 +42,7 @@ function startTimer() {
     clearInterval(countdown);
 
     if(!paused) {
-        quizTime = 5; // 1.5 minutes in seconds
+        quizTime = 90; // 1.5 minutes in seconds
     } else {
         quizTime = remainTime;
     }
