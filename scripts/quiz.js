@@ -161,6 +161,8 @@ function checkAnswer(selectedIndex) {
 
 // Modal Functions
 function showResults() {
+    stopTimer();
+
     // Update modal with final score
     document.getElementById("final-score").textContent = currentScore / 20; // Convert points to correct count
     document.getElementById("current-score-display").textContent = currentScore;
@@ -214,6 +216,7 @@ function restartQuiz() {
     currentScore = 0;
     incorrectAnswers = [];
     paused = false;
+    startTimer();
     
     // Update UI
     scoreDisplay.textContent = '0';
