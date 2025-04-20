@@ -1,6 +1,6 @@
 // Quiz State Variables
 let countdown;
-let quizTime = 10;
+let quizTime = 90;
 let paused = false;
 let remainTime = 0;
 let currentScore = 0;
@@ -42,7 +42,7 @@ function startTimer() {
     clearInterval(countdown);
 
     if(!paused) {
-        quizTime = 90; // 1.5 minutes in seconds
+        quizTime = 5; // 1.5 minutes in seconds
     } else {
         quizTime = remainTime;
     }
@@ -81,7 +81,6 @@ function resumeQuiz() {
     startTimer();
     const stopQuizModal = bootstrap.Modal.getInstance(document.getElementById('exitConfirmationModal'));
     stopQuizModal.hide();
-    console.log("test");
 }
 
 function stopQuiz() {
@@ -121,6 +120,10 @@ function displayQuestion() {
 function nextQuestion() {
     currentQuestionIndex += 1;
     if(currentQuestionIndex < quizArray.length) {
+        if(quizTime < 0) {
+            timeExpired();
+            return;
+        }
         displayQuestion();
     } else {
         showResults();
