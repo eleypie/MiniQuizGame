@@ -385,6 +385,15 @@ body {
     color: white;
 }
 
+.review-btn a {
+    color: white;
+    text-decoration: none;
+}
+
+.review-btn:hover a{
+    color: var(--text-color)
+}
+
 .restart-btn {
     background-color: var(--primary-color);
     color: white;
