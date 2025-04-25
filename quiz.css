@@ -347,7 +347,6 @@ body {
     color: white;
     border-radius: var(--border-radius);
     padding: 1rem;
-    margin-bottom: 1rem;
 }
 
 .incorrect {
@@ -355,7 +354,6 @@ body {
     color: white;
     border-radius: var(--border-radius);
     padding: 1rem;
-    margin-bottom: 1rem;
 }
 
 /* Modal Buttons */
