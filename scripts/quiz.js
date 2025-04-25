@@ -68,7 +68,6 @@ function updateTimer() {
     seconds = seconds < 10 ? "0" + seconds : seconds;
     minutes = minutes < 10 ? "0" + minutes : minutes;
     timerDisplay.textContent = `${minutes}:${seconds}`;
-    console.log(seconds);
 }
 
 function stopTimer() {
@@ -223,11 +222,10 @@ function restartQuiz() {
     // Update UI
     scoreDisplay.textContent = '0';
     document.getElementById('answers-review').style.display = 'none';
-    document.getElementById('toggle-review').innerHTML = '<i class="bi bi-search"></i> Review Answers';
     
     // Restart quiz
     displayQuestion();
-    
+
     // Hide modal
     const resultsModal = bootstrap.Modal.getInstance(document.getElementById('resultsModal'));
     resultsModal.hide();

@@ -336,6 +336,22 @@ body {
     font-weight: 600;
 }
 
+.correct {
+    background-color: #28a745 !important;
+    color: white;
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.incorrect {
+    background-color: #dc3545 !important;
+    color: white;
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
 /* Modal Buttons */
 .btn {
     padding: 0.75rem 1.25rem;
