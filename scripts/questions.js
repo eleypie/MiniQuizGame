@@ -5,9 +5,9 @@ const setQ1 = [
     correct: 0
 }, 
     {
-        question: "When did the Gaza Ceasefire take place?",
-        answers: ["January 19-March 18, 2025", "January 19-March 18, 2024", "January 19-February 18, 2024", "February 19-March 18, 2028"], 
-        correct: 0
+        question: "What happened on April 21,2025",
+        answers: ["Holy Week just ended", "Pope Francis declared who the new pope is", "Pope Francis died", "A new pope got elected"], 
+        correct: 2
 }, 
     {
         question: "Why did the South Korean President declare Martial Law?",
@@ -39,12 +39,12 @@ const setQ2 = [{
 }, 
     {
         question: "When will the 2025 Philippine Senate election take place?",
-        answers: ["May 13, 2025", "June 12, 2025", "May 12, 2025", "May 12, 2024"], 
+        answers: ["May 1, 2025", "June 12, 2025", "May 12, 2025", "May 12, 2024"], 
         correct: 2
 }, 
     {
-        question: "What is the number of registered voters for 2025 according to COMELEC?",
-        answers: ["68.5 million", "69.4 million", "68.4 million", "68.4 billion"], 
+        question: "What is the full name of COMELEC?",
+        answers: ["Cooperation on Elections", "Commerce Election", "Commission on Elections", "Commission on Electives"], 
         correct: 2
 }, 
     {
@@ -55,8 +55,8 @@ const setQ2 = [{
 ]
 
 const setQ3 = [{
-    question: "When was former President Rodrigo Duterte arrested?",
-    answers: ["March 12,2025", "March 11,2024", "March 11,2025", "March 10,2025"], 
+    question: "What is former President Duterte's full name?",
+    answers: ["Digong 'Rody' Duterte", "D30 Duterte", "Rodrigo Roa Duterte", "Rodrigo Dua Duterte"], 
     correct: 2
 }, 
     {
@@ -82,19 +82,19 @@ const setQ3 = [{
 ]
 
 const setQ4 = [{
-    question: "How big is the budget for the 2025 fiscal year in the Philippines?",
-    answers: ["6.35 Trillion Pesos", "6.36 Trillion Pesos", "6.35 Billion Pesos", "7.35 Trillion Pesos"], 
+    question: "Why was the 2025 Philippine budget controversal?",
+    answers: ["Massive cuts to education, health and calamity response", "Increased Military Spending", "Pork Barrel Scam", "Corruption"], 
     correct: 0
 }, 
     {
-        question: "What is the national headline inflation rate for March 2025?",
-        answers: ["1.8 percent", "1.9 percent", "1.7 percent", "2.8 percent"], 
-        correct: 0
+        question: "What is the major cause of inflation in the Philippines?",
+        answers: ["Corruption", "Tarrifs", "Wars", "Supply and Demand"], 
+        correct: 3
 }, 
     {
-        question: "According to PSA, what is the estimated unemployment rate of the Philippines in February 2025?",
-        answers: ["3.8 percent", "3.9 percent", "3.7 percent", "4.8 percent"], 
-        correct: 0
+        question: "What is the major cause of unemployment in the Philippines?",
+        answers: ["economic instability", "nepotism and cronyism", "rpid population growth and insufficient job creations", "corruption and a mismatch between skills and job requirement"], 
+        correct: 2
 }, 
     {
         question: "According to PSA, what is the projected population of the Philippines on 2055?",
@@ -102,8 +102,8 @@ const setQ4 = [{
         correct: 0
 }, 
     {
-        question: "According to PSA, what is the full year GDP growth of the Philippines on 2055?",
-        answers: ["5.6 percent", "5.7 percent",	"5.5 percent", "6.6 percent"], 
-        correct: 0
+        question: "What is the Philippines' rank in the GDP index?",
+        answers: ["1", "33",	"75", "181"], 
+        correct: 1
 }
 ]
