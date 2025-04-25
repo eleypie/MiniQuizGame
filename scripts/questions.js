@@ -11,7 +11,7 @@ const setQ1 = [
 }, 
     {
         question: "Why did the South Korean President declare Martial Law?",
-        answers: ["He was on a power trip", "To protect the country from “antistate forces", "Because he felt like it", "He was pressured to do so"], 
+        answers: ["He was on a power trip", "To protect the country from 'antistate forces'", "Because he felt like it", "He was pressured to do so"], 
         correct: 1
     
 }, 
@@ -93,7 +93,7 @@ const setQ4 = [{
 }, 
     {
         question: "What is the major cause of unemployment in the Philippines?",
-        answers: ["economic instability", "nepotism and cronyism", "rpid population growth and insufficient job creations", "corruption and a mismatch between skills and job requirement"], 
+        answers: ["Economic instability", "Nepotism and cronyism", "Rapid population growth and insufficient job creations", "Corruption and a mismatch between skills and job requirement"], 
         correct: 2
 }, 
     {
