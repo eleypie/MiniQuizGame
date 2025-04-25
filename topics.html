@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizmo - Interactive Quiz Platform</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="topics.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
 
     <link rel="icon" href="img/page-icon.png" type="image/png">
@@ -17,8 +17,8 @@
 </head>
 
 <body>
-    <!-- Floating Particles Background -->
-    <div class="particles">
+      <!-- Floating Particles Background -->
+      <div class="particles">
         <div class="particle"></div>
         <div class="particle"></div>
         <div class="particle"></div>
@@ -31,7 +31,7 @@
             <a href="#" class="logo">Quizmo</a>
             <nav class="navbar">
                 <ul class="nav-list">
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="topics.html">Topics</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
@@ -40,59 +40,68 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="quizmo">Test Your Knowledge</h1>
-                <p class="tagline">What are the defining moments of today, here and abroad? Find out with Quizmo </p>
-                <div class="line"></div>
-                <p class="description">Challenge yourself with our interactive quizzes on Quizmo!</p>
-                <a href="topics.html" class="cta-button">
-                    Explore Topics
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
+   <!-- Topics Section -->
+<section id="topics" class="topics-section">
+    <div class="section-header">
+        <h2 class="topic-section-title">Pick a Topic & Start Buzzing!</h2>
+        <p class="topic-section-subtitle">CHOOSE A HIVE OF KNOWLEDGE! EACH TOPIC HAS 5 QUESTIONS. TEST YOUR SKILLS AND COLLECT HONEY POINTS!</p>
+    </div>
+
+    <div class="topic-grid">
+        <!-- Topic Cards -->
+        <div class="topic-card">
+            <div class="card-badge">Popular</div>
+            <div class="card-icon">🌎</div>
+            <h3>International News</h3>
+            <p>Test your global awareness with current events</p>
+            <div class="card-footer">
+                <span class="question-count">5 Questions</span>
+                <span class="honey-points">+50 Points</span>
             </div>
-            <div class="hero-image">
-                <div class="hexagon-container">
-                    <div class="hexagon"></div>
-                    <div class="hexagon"></div>
-                    <div class="hexagon"></div>
-                </div>
-                <img src="img/brain-logo.png" alt="brain-logo-image" class="brain-logo">
-            </div>
+            <a href="quiz.html" class="play-button" data-set="setQ1">Play Now</a>
+            <div class="card-hover"></div>
         </div>
-    </section>
-
-   
-
-    <!-- Stats Section
-    <section class="stats-section">
-        <div class="stats-container">
-            <div class="stat-card">
-                <div class="stat-number" data-count="1000">0</div>
-                <div class="stat-label">Quizzes Taken</div>
+        
+        <!-- Repeat for other topics -->
+        <div class="topic-card">
+            <div class="card-icon">🗳️</div>
+            <h3>Midterm Election</h3>
+            <p>How well do you know political processes?</p>
+            <div class="card-footer">
+                <span class="question-count">5 Questions</span>
+                <span class="honey-points">+50 Points</span>
             </div>
-            <div class="stat-card">
-                <div class="stat-number" data-count="250">0</div>
-                <div class="stat-label">Active Users</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" data-count="50">0</div>
-                <div class="stat-label">Topics Available</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" data-count="100">0</div>
-                <div class="stat-label">Honey Points Earned</div>
-            </div>
+            <a href="quiz.html" class="play-button" data-set="setQ2">Start Quiz</a>
+            <div class="card-hover"></div>
         </div>
-    </section>
-     -->
-
-     
-     <footer class="footer bg-danger">
+        
+        <div class="topic-card">
+            <div class="card-badge">New</div>
+            <div class="card-icon">📰</div>
+            <h3>Duterte Era</h3>
+            <p>Quiz about recent political history</p>
+            <div class="card-footer">
+                <span class="question-count">5 Questions</span>
+                <span class="honey-points">+50 Points</span>
+            </div>
+            <a href="quiz.html" class="play-button" data-set="setQ3">Play Now</a>
+            <div class="card-hover"></div>
+        </div>
+        
+        <div class="topic-card">
+            <div class="card-icon">📱</div>
+            <h3>Present News</h3>
+            <p>Current events and trending topics</p>
+            <div class="card-footer">
+                <span class="question-count">5 Questions</span>
+                <span class="honey-points">+50 Points</span>
+            </div>
+            <a href="quiz.html" class="play-button" data-set="setQ4">Start Quiz</a>
+            <div class="card-hover"></div>
+        </div>
+    </div>
+</section>
+ <footer class="footer bg-danger">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-md-4 mt-4 col-lg-3 text-center text-sm-start">
@@ -142,4 +151,6 @@
             <p class="mb-0 fw-bold">2025 © Quizmo, All Rights Reserved</p>
         </div>
       </footer>
-    <script src="scripts/script.js"></script>
+
+
+</body>
