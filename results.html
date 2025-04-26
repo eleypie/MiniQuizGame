@@ -50,29 +50,56 @@
                     <span id="question-num">
                         Question <span id="num">1</span> of 5
                     </span>
-                    <span id="question">
-                        
-                    </span>
+                    <span id="question"></span>
+                    
                     <div class="choices-group row justify-content-between">
-                        <button class="choices" type="button" onclick="checkAnswer(0)">
+                        <!-- Choice A -->
+                        <button class="choices" type="button">
                             <span class="choice-letter">A</span>
                             <span class="choice-text"></span>
+                            <span class="answer-status"></span>
                         </button>
-                        <button class="choices" type="button" onclick="checkAnswer(1)">
+                        
+                        <!-- Choice B -->
+                        <button class="choices" type="button">
                             <span class="choice-letter">B</span>
                             <span class="choice-text"></span>
+                            <span class="answer-status"></span>
                         </button>
-                        <button class="choices" type="button" onclick="checkAnswer(2)">
+                        
+                        <!-- Choice C -->
+                        <button class="choices" type="button">
                             <span class="choice-letter">C</span>
                             <span class="choice-text"></span>
+                            <span class="answer-status"></span>
                         </button>
-                        <button class="choices" type="button" onclick="checkAnswer(3)">
+                        
+                        <!-- Choice D -->
+                        <button class="choices" type="button">
                             <span class="choice-letter">D</span>
                             <span class="choice-text"></span>
+                            <span class="answer-status"></span>
                         </button>
                     </div>
+                    
+                    <!-- Explanation Section -->
+                    <div class="explanation mt-3 p-3 bg-light rounded" id="explanation1">
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-info-circle-fill text-primary me-2"></i>
+                            <h5 class="mb-0">Explanation</h5>
+                        </div>
+                        <div class="explanation-text"></div>
+                        
+                        <!-- Additional Resources (optional) -->
+                        <div class="resources mt-3 pt-2 border-top">
+                            <small class="text-muted">
+                                <i class="bi bi-book me-1"></i>
+                                <span class="resource-text">Learn more: </span>
+                                <a href="#" class="resource-link" target="_blank">Related article</a>
+                            </small>
+                        </div>
+                    </div>
                 </div>
-            </div>
             <div id="question2" class="quizmo-section-container container-fluid p-4 card">
                 <div class="timer-score d-flex flex-row mb-2">
                     <div class="quizmo-score d-flex align-items-center">
@@ -207,7 +234,7 @@
             </div>
         </div>    
     </main>
-
+    
     <script src="scripts/questions.js"></script>
     <script src="scripts/quiz.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>

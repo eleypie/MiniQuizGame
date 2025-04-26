@@ -162,39 +162,41 @@ function checkAnswer(selectedIndex) {
 
 
 // Modal Functions
+// [Keep all your existing code until showResults()]
+
 function showResults() {
     stopTimer();
 
-    // Update modal with final score
-    document.getElementById("final-score").textContent = currentScore / 20; // Convert points to correct count
-    document.getElementById("current-score-display").textContent = currentScore;
-    document.getElementById("points-earned").textContent = currentScore;
-    
-    // Set result message based on performance
+    // Calculate results
+    const finalScore = currentScore / 20;
     const percentage = (currentScore / (quizArray.length * 20)) * 100;
-    let message = "";
-    
-    if(percentage >= 80) message = "Hive Five! You're a Quizmo Champion!";
-    else if(percentage >= 50) message = "Good Job! You're getting there!";
-    else message = "Keep practicing! You'll do better next time!";
-    
+
+    // Set message
+    let message = percentage >= 80 ? "Hive Five! You're a Quizmo Champion!" :
+                 percentage >= 50 ? "Good Job! You're getting there!" :
+                 "Keep practicing! You'll do better next time!";
+
+    // Update modal elements
+    document.getElementById("final-score").textContent = finalScore;
     document.getElementById("result-message").textContent = message;
-    
-    // Populate incorrect answers
-    const incorrectContainer = document.querySelector('.incorrect-answers');
-    incorrectContainer.innerHTML = incorrectAnswers.map((answer, index) => `
-        <div class="incorrect-answer">
-            <div class="question">Question ${index + 1}: ${answer.question}</div>
-            <div class="your-answer">Your answer: ${answer.userAnswer}</div>
-            <div class="correct-answer">Correct answer: ${answer.correctAnswer}</div>
-        </div>
-    `).join('');
-    
-    // Show results modal
+    document.getElementById("points-earned").textContent = currentScore;
+
+    // Save to localStorage (without incorrect answers if not needed)
+    localStorage.setItem('quizResults', JSON.stringify({
+        finalScore: finalScore,
+        currentScore: currentScore,
+        message: message,
+        allQuestions: quizArray,
+        selectedSet: selectedSetName
+    }));
+
+    // Show modal
     const resultsModal = new bootstrap.Modal(document.getElementById('resultsModal'));
     resultsModal.show();
 }
 
+
+// [Rest of your existing code]
 // Toggle answers review
 document.getElementById('toggle-review')?.addEventListener('click', function() {
     const reviewSection = document.getElementById('answers-review');
@@ -245,3 +247,4 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => checkAnswer(index));
     });
 });
+
