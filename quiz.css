@@ -210,6 +210,7 @@ body {
 }
 
 /* Answer States */
+/* Answer States */
 .choice-btn.correct {
     border-color: var(--correct-color);
     background-color: rgba(40, 167, 69, 0.1);
@@ -221,23 +222,24 @@ body {
     color: white;
 }
 
-.choice-btn.wrong {
+/* Changed from .wrong to .incorrect */
+.choice-btn.incorrect {
     border-color: var(--wrong-color);
-    background-color: rgba(108, 117, 125, 0.1);
+    background-color: rgba(220, 53, 69, 0.1); /* Lighter red for better contrast */
 }
 
-.choice-btn.wrong .choice-letter {
+.choice-btn.incorrect .choice-letter {
     border-color: var(--wrong-color);
     background-color: var(--wrong-color);
     color: white;
 }
 
-.choice-btn.selected:not(.correct):not(.wrong) {
+.choice-btn.selected:not(.correct):not(.incorrect) {
     border-color: var(--primary-color);
     background-color: rgba(184, 0, 31, 0.1);
 }
 
-.choice-btn.selected:not(.correct):not(.wrong) .choice-letter {
+.choice-btn.selected:not(.correct):not(.incorrect) .choice-letter {
     border-color: var(--primary-color);
     background-color: var(--primary-color);
     color: white;

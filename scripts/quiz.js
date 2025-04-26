@@ -214,25 +214,31 @@ function exitQuiz() {
     window.location.href = "index.html";
 }
 
-function restartQuiz() {
-    // Reset all quiz state
+window.restartQuiz = function() {
+    // 1. Reset all quiz variables
     currentQuestionIndex = 0;
     currentScore = 0;
     incorrectAnswers = [];
     paused = false;
+    quizTime = 90; // Reset to initial time
+    answerLocked = false; // Unlock buttons
     
-    // Update UI
+    // 2. Stop any running timer
+    clearInterval(countdown);
+    
+    // 3. Update UI
     scoreDisplay.textContent = '0';
-    document.getElementById('answers-review').style.display = 'none';
+    const reviewSection = document.getElementById('answers-review');
+    if (reviewSection) reviewSection.style.display = 'none';
     
-    // Restart quiz
+    // 4. Restart quiz
     displayQuestion();
-
-    // Hide modal
-    const resultsModal = bootstrap.Modal.getInstance(document.getElementById('resultsModal'));
-    resultsModal.hide();
     startTimer();
-}
+    
+    // 5. Close the results modal
+    const resultsModal = bootstrap.Modal.getInstance(document.getElementById('resultsModal'));
+    if (resultsModal) resultsModal.hide();
+};
 
 function quitQuiz() {
     window.location.href = '../index.html';
