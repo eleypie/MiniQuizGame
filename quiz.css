@@ -1,9 +1,7 @@
 :root {
-    /* Fonts */
     --font-heading: 'Archivo Black', sans-serif;
     --font-body: 'Roboto', sans-serif;
     
-    /* Color Scheme */
     --primary-color: #b8001f;
     --secondary-color: #d62828;
     --light-color: #f8f9fa;
@@ -12,17 +10,15 @@
     --text-light: #6c757d;
     --yellow-accent: #FFCE32;
     --blue-accent: #1D63FF;
-    --correct-color: #28a745; /* Green for correct answers */
-    --wrong-color:rgba(193, 84, 84, 0.63); /* Grey for wrong answers */
+    --correct-color: #28a745;
+    --wrong-color:rgba(193, 84, 84, 0.63);
     
-    /* Design Tokens */
     --border-radius: 12px;
     --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     --transition: all 0.3s ease;
     --header-height: 70px;
 }
 
-/* Base Styles */
 body {
     font-family: var(--font-body);
     color: var(--text-color);
@@ -33,14 +29,13 @@ body {
     min-height: 100vh;
 }
 
-/* Header Styles */
 .quizmo-header {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
     background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(0.625rem);
     box-shadow: var(--box-shadow);
     height: var(--header-height);
 }
@@ -68,9 +63,11 @@ body {
 .quizmo-badge {
     background-color: var(--primary-color);
     color: white;
-    padding: 0.25rem 0.75rem;
     border-radius: 999px;
+    padding: 0 0.75rem;
     font-size: 0.75rem;
+    text-align: center;
+    height: 1.25rem;
 }
 
 .quizmo-stop-btn {
@@ -86,10 +83,17 @@ body {
     transition: var(--transition);
 }
 
+@media (max-width: 326px) {
+    .quizmo-stop-btn {
+        width: 7rem;
+        font-size: 0.5rem;
+    }
+}
+
 .quizmo-stop-btn:hover {
     background-color: var(--secondary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(184, 0, 31, 0.3);
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(184, 0, 31, 0.3);
 }
 
 /* Main Game Container */
@@ -189,13 +193,13 @@ body {
 }
 
 .choice-letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 36px;
     height: 36px;
     border-radius: 50%;
     border: 2px solid #e0e0e0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-weight: bold;
     flex-shrink: 0;
     transition: var(--transition);
@@ -209,8 +213,6 @@ body {
     color: white;
 }
 
-/* Answer States */
-/* Answer States */
 .choice-btn.correct {
     border-color: var(--correct-color);
     background-color: rgba(40, 167, 69, 0.1);
@@ -222,10 +224,9 @@ body {
     color: white;
 }
 
-/* Changed from .wrong to .incorrect */
 .choice-btn.incorrect {
     border-color: var(--wrong-color);
-    background-color: rgba(220, 53, 69, 0.1); /* Lighter red for better contrast */
+    background-color: rgba(220, 53, 69, 0.1);
 }
 
 .choice-btn.incorrect .choice-letter {
@@ -275,7 +276,6 @@ body {
     gap: 0.75rem;
 }
 
-/* Results Modal - Optimized */
 .modal-body {
     text-align: center;
     padding: 2rem;
