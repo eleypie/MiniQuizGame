@@ -7,6 +7,7 @@ let currentScore = 0;
 let currentQuestionIndex = 0;
 let incorrectAnswers = [];
 let quizArray = [];
+const userAnswers = []; // User's selected answers (0-3)
 
 // DOM Elements
 const question = document.getElementById("question");
@@ -18,6 +19,7 @@ const scoreDisplay = document.getElementById("score");
 const progressBar = document.querySelector(".progress-bar");
 const numDisplay = document.getElementById("num");
 const selectedSetName = localStorage.getItem('selectedQuizSet');
+const scorePerQuestion = document.querySelectorAll(".score-per-question");
 
 switch (selectedSetName) {
     case "setQ1":
@@ -136,7 +138,6 @@ function checkAnswer(selectedIndex) {
     
     const questionData = quizArray[currentQuestionIndex];
     const isCorrect = selectedIndex == questionData.correct;
-
     if (isCorrect) {
         currentScore += 20;
         scoreDisplay.textContent = currentScore;
@@ -152,11 +153,16 @@ function checkAnswer(selectedIndex) {
     const selectedButton = choices[selectedIndex];
     selectedButton.classList.add(isCorrect ? 'correct' : 'incorrect');
 
+    userAnswers[currentQuestionIndex] = selectedIndex; // Store user's answer
+    localStorage.setItem('userAnswers', JSON.stringify(userAnswers)); // Save user answers
+
     setTimeout(() => {
         selectedButton.classList.remove('correct', 'incorrect');
         answerLocked = false;
         nextQuestion();
     }, 1000);
+
+    return isCorrect; // Return true or false for further processing if needed
 }
 
 
@@ -184,13 +190,97 @@ function showResults() {
         currentScore: currentScore,
         message: message,
         allQuestions: quizArray,
-        selectedSet: selectedSetName
+        selectedSet: selectedSetName,
     }));
 
     // Show modal
     const resultsModal = new bootstrap.Modal(document.getElementById('resultsModal'));
     resultsModal.show();
 }
+
+//Review Answers 
+
+function populateReviewPage(questionSet, userAnswers) {
+    
+
+    // Loop through each question
+    for (let i = 0; i < questionSet.length; i++) {
+        const currentQuestion = questionSet[i];
+        const questionDiv = document.getElementById(`question${i+1}`);
+        
+        if (!questionDiv) continue;
+        
+        // Set question number and text
+        questionDiv.querySelector('#num').textContent = i+1;
+        questionDiv.querySelector('#question').textContent = currentQuestion.question;
+        
+        // Get all choice elements
+        const choices = questionDiv.querySelectorAll('.choices');
+        const choiceTexts = questionDiv.querySelectorAll('.choice-text');
+        const answerStatuses = questionDiv.querySelectorAll('.answer-status');
+        
+
+
+        // Populate choices and mark answers
+        for (let j = 0; j < choices.length; j++) {
+            // Set choice text
+            choiceTexts[j].textContent = currentQuestion.answers[j];
+            
+            // Reset classes and status
+            choices[j].className = 'choices'; // Remove all classes
+            answerStatuses[j].textContent = '';
+            answerStatuses[j].className = 'answer-status';
+            
+
+            // Mark correct answer
+            if (j === currentQuestion.correct) {
+                choices[j].classList.add('correct-answer');
+                answerStatuses[j].classList.add('correct-status');
+                answerStatuses[j].textContent = 'Correct Answer';
+            }
+            
+            // Mark user's answer
+            if (j === userAnswers[i]) {
+                if (j === currentQuestion.correct) {
+                    choices[j].classList.add('user-correct');
+                    scorePerQuestion[i].textContent = '20';
+                } else {
+                    choices[j].classList.add('incorrect-answer');
+                    answerStatuses[j].classList.add('incorrect-status');
+                    answerStatuses[j].textContent = 'Your Answer';
+                }
+            }
+        }
+        
+        // Set explanation if available
+        const explanationText = questionDiv.querySelector('.explanation-text');
+        if (explanationText && currentQuestion.explanation) {
+            explanationText.textContent = currentQuestion.explanation;
+        }
+        
+        // Set resource link if available
+        const resourceLink = questionDiv.querySelector('.resource-link');
+        if (resourceLink && currentQuestion.resource) {
+            resourceLink.href = currentQuestion.resource;
+            resourceLink.textContent = "Read more here"; // Or use the URL
+        }
+        
+        // Always show explanation section for review page
+        const explanationSection = questionDiv.querySelector('.explanation');
+        if (explanationSection) {
+            explanationSection.style.display = 'block';
+        }
+    }
+
+}
+
+// Initialize when page loads
+window.onload = function() {
+    const savedAnswers = JSON.parse(localStorage.getItem('userAnswers'));
+    populateReviewPage(quizArray, savedAnswers);
+
+    
+};
 
 
 
@@ -241,8 +331,12 @@ document.addEventListener('DOMContentLoaded', () => {
     displayQuestion();
     
     // Add event listeners to answer buttons
-    choices.forEach((button, index) => {
-        button.addEventListener('click', () => checkAnswer(index));
-    });
+        // choices.forEach((button, index) => {
+        //     button.addEventListener('click', () => {
+        //         checkAnswer(index);
+        //         userAnswers[currentQuestionIndex] = index; // Store user's answer
+        //     });
+
+        // });
 });
 
