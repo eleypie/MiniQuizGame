@@ -79,36 +79,36 @@ const setQ3 = [
         question: "What is former President Duterte's full name?",
         answers: ["Digong 'Rody' Duterte", "D30 Duterte", "Rodrigo Roa Duterte", "Rodrigo Dua Duterte"], 
         correct: 2,
-        explanation: "" ,
-        resource: ""
+        explanation: "While Rodrigo Duterte is more known as 'Digong', Duterte's full name is Rodrigo Roa Duterte." ,
+        resource: "https://www.britannica.com/topic/Rodrigo-Duterte"
 }, 
     {
         question: "When was the War on Drugs in the Philippines started?",
         answers: ["June 29, 2016", "June 30, 2016", "July 1, 2016", "June 30, 2017"], 
         correct: 1,
-        explanation: "" ,
-        resource: ""
+        explanation: "The war on drugs started as soon as Rodrigo Duterte took office, which is June 30." ,
+        resource: "https://www.hrw.org/tag/philippines-war-drugs"
 }, 
     {
         question: "Who has Rodrigo Duterte in custody?",
         answers: ["International Criminal Court (ICC)", "Intentional Criminal Court (ICC)", "International Criminal Council (ICC)", "International College Court (ICC)"], 
         correct: 0,
-        explanation: "" ,
-        resource: ""
+        explanation: "The International Criminal Court (ICC) investigates and, where warranted, tries individuals charged with the gravest crimes of concern to the international community: genocide, war crimes, crimes against humanity and the crime of aggression." ,
+        resource: "https://www.icc-cpi.int/about/the-court"
 }, 
     {
         question: "What was the major charge against Rodrigo Duterte?",
         answers: ["Crimes against Humanity of corruption", "Crimes against Humanity of taking drugs", "Crimes against Humanity of kidnapping and torture", "Crimes against Humanity of murder, torture, and rape"], 
         correct: 3,
-        explanation: "" ,
-        resource: ""
+        explanation: "This was the result of the DDS (Davao Death Squad) and the attacks were systematic." ,
+        resource: "https://www.icc-cpi.int/news/situation-philippines-rodrigo-roa-duterte-icc-custody"
 }, 
     {
         question: "Where was Rodrigo Duterte taken?",
         answers: ["The Hague in the Netherlands", "The windmill in the Netherlands", "The Hague in Russia", "The Hague with the Dutch"], 
         correct: 0,
-        explanation: "" ,
-        resource: ""
+        explanation: "According to the official site, the ICC's headquarters is in Hague, Netherlands." ,
+        resource: "https://www.icc-cpi.int/about/the-court"
 }
 ]
 
@@ -118,34 +118,34 @@ const setQ4 = [
         answers: ["Massive cuts to education, health and calamity response", "Increased Military Spending", "Pork Barrel Scam", "Corruption"], 
         correct: 0,
         explanation: "" ,
-        resource: ""
+        resource: "https://thedefiant.net/the-2025-budget-controversy-highlights-filipino-politicians-continued-reliance-on-patronage-politics/"
 }, 
     {
         question: "What is the major cause of inflation in the Philippines?",
         answers: ["Corruption", "Tarrifs", "Wars", "Supply and Demand"], 
         correct: 3,
-        explanation: "" ,
-        resource: ""
+        explanation: "While policies can change inflation rates, supply and demand are the main core of the economic cycles." ,
+        resource: "https://amro-asia.org/addressing-high-inflation-in-the-philippines-the-role-of-policy-mix"
 }, 
     {
         question: "What is the major cause of unemployment in the Philippines?",
         answers: ["Economic instability", "Nepotism and cronyism", "Rapid population growth and insufficient job creations", "Corruption and a mismatch between skills and job requirement"], 
         correct: 2,
-        explanation: "" ,
-        resource: ""
+        explanation: "The mismatch of the rapid population growth and insufficient job creations leave a gap which leads to a gap in employment, leading to unemployment." ,
+        resource: "https://www.imf.org/external/pubs/ft/wp/2002/wp0223.pdf"
 }, 
     {
         question: "According to PSA, what is the projected population of the Philippines on 2055?",
         answers: ["138.67 Million", "138.69 Million", "139.67 Million", "138.67 Billion"], 
         correct: 0,
-        explanation: "" ,
-        resource: ""
+        explanation: "This is according to the predictions of the Philippine Statistics Authority. There are more predictions but this is in scenario 2." ,
+        resource: "https://psa.gov.ph/content/philippine-population-projected-be-around-13867-million-2055-under-scenario-2"
 }, 
     {
         question: "What is the Philippines' rank in the GDP index?",
         answers: ["1", "33", "75", "181"], 
         correct: 1,
-        explanation: "" ,
-        resource: ""
+        explanation: "This is the ranking based on the most recent value of the GDP indicators in the world bank's official website." ,
+        resource: "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?most_recent_value_desc=true"
 }
 ]
