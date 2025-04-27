@@ -12,7 +12,6 @@
     <title>Quizmo | Game</title>
 </head>
 <body onload="startTimer()">
-    <!-- Header -->
     <header class="quizmo-header">
         <nav class="navbar quiz-navbar d-flex justify-content-between align-items-center container-fluid">
             <a class="navbar-brand d-flex flex-column justify-content-between" href="index.html">
@@ -26,9 +25,7 @@
         </nav>
     </header>
 
-    <!-- Main Quiz Container -->
     <main class="quizmo-game-container">
-        <!-- Game Stats Bar -->
         <div class="quizmo-stats-bar">
             <div class="quizmo-timer">
                 <i class="bi bi-stopwatch"></i>
@@ -50,7 +47,6 @@
             </div>
         </div>
 
-        <!-- Question Card -->
         <div class="quizmo-question-card">
             <div class="question-content">
                 <h2 id="question"></h2>
@@ -78,7 +74,6 @@
 
     </main>
 
-    <!-- Exit Confirmation Modal -->
     <div class="modal fade" id="exitConfirmationModal" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content quizmo-modal">
@@ -105,7 +100,6 @@
         </div>
     </div>
 
-    <!-- Results Modal -->
     <div class="modal fade" id="resultsModal" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content quizmo-modal">
@@ -147,7 +141,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/questions.js"></script>
     <script src="scripts/quiz.js"></script>
-   
-    
 </body>
 </html>

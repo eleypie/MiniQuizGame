@@ -42,7 +42,7 @@ function startTimer() {
     clearInterval(countdown);
 
     if(!paused) {
-        quizTime = 60; // 1.5 minutes in seconds
+        quizTime = 60;
     } else {
         quizTime = remainTime;
     }
@@ -89,7 +89,6 @@ function stopQuiz() {
 }
 
 function timeExpired() {
-    // Handle when time runs out
     const currentQuestion = quizArray[currentQuestionIndex];
     incorrectAnswers.push({
         question: currentQuestion.question,
@@ -162,8 +161,6 @@ function checkAnswer(selectedIndex) {
 
 
 // Modal Functions
-// [Keep all your existing code until showResults()]
-
 function showResults() {
     stopTimer();
 
@@ -196,7 +193,7 @@ function showResults() {
 }
 
 
-// [Rest of your existing code]
+
 // Toggle answers review
 document.getElementById('toggle-review')?.addEventListener('click', function() {
     const reviewSection = document.getElementById('answers-review');
@@ -215,7 +212,6 @@ function exitQuiz() {
 }
 
 window.restartQuiz = function() {
-    // 1. Reset all quiz variables
     currentQuestionIndex = 0;
     currentScore = 0;
     incorrectAnswers = [];
@@ -223,19 +219,15 @@ window.restartQuiz = function() {
     quizTime = 90; // Reset to initial time
     answerLocked = false; // Unlock buttons
     
-    // 2. Stop any running timer
     clearInterval(countdown);
     
-    // 3. Update UI
     scoreDisplay.textContent = '0';
     const reviewSection = document.getElementById('answers-review');
     if (reviewSection) reviewSection.style.display = 'none';
     
-    // 4. Restart quiz
     displayQuestion();
     startTimer();
     
-    // 5. Close the results modal
     const resultsModal = bootstrap.Modal.getInstance(document.getElementById('resultsModal'));
     if (resultsModal) resultsModal.hide();
 };
