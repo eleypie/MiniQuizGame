@@ -7,6 +7,7 @@ let currentScore = 0;
 let currentQuestionIndex = 0;
 let incorrectAnswers = [];
 let quizArray = [];
+let finalScore = 0;
 const userAnswers = []; // User's selected answers (0-3)
 
 // DOM Elements
@@ -20,6 +21,7 @@ const progressBar = document.querySelector(".progress-bar");
 const numDisplay = document.getElementById("num");
 const selectedSetName = localStorage.getItem('selectedQuizSet');
 const scorePerQuestion = document.querySelectorAll(".score-per-question");
+const finalScoreDisplay = document.getElementById("final-score");
 
 switch (selectedSetName) {
     case "setQ1":
@@ -113,8 +115,8 @@ function displayQuestion() {
     numDisplay.textContent = currentQuestionIndex + 1;
     progressBar.style.width = `${((currentQuestionIndex + 1) / quizArray.length) * 100}%`;
 
-    console.log("Current Question Index:", currentQuestionIndex);
-    console.log("Current Question:", questionData.question);
+    // console.log("Current Question Index:", currentQuestionIndex);
+    // console.log("Current Question:", questionData.question);
 }
 
 function nextQuestion() {
@@ -141,6 +143,7 @@ function checkAnswer(selectedIndex) {
     if (isCorrect) {
         currentScore += 20;
         scoreDisplay.textContent = currentScore;
+        finalScore += 1; 
     } else {
         incorrectAnswers.push({
             question: questionData.question,
@@ -155,14 +158,13 @@ function checkAnswer(selectedIndex) {
 
     userAnswers[currentQuestionIndex] = selectedIndex; // Store user's answer
     localStorage.setItem('userAnswers', JSON.stringify(userAnswers)); // Save user answers
+    localStorage.setItem('finalScore', JSON.stringify(finalScore)); // Save final score
 
     setTimeout(() => {
         selectedButton.classList.remove('correct', 'incorrect');
         answerLocked = false;
         nextQuestion();
     }, 1000);
-
-    return isCorrect; // Return true or false for further processing if needed
 }
 
 
@@ -201,7 +203,6 @@ function showResults() {
 //Review Answers 
 
 function populateReviewPage(questionSet, userAnswers) {
-    
 
     // Loop through each question
     for (let i = 0; i < questionSet.length; i++) {
@@ -218,8 +219,7 @@ function populateReviewPage(questionSet, userAnswers) {
         const choices = questionDiv.querySelectorAll('.choices');
         const choiceTexts = questionDiv.querySelectorAll('.choice-text');
         const answerStatuses = questionDiv.querySelectorAll('.answer-status');
-        
-
+        const finalScoreDisplay1 = JSON.parse(localStorage.getItem('finalScore'));
 
         // Populate choices and mark answers
         for (let j = 0; j < choices.length; j++) {
@@ -244,6 +244,8 @@ function populateReviewPage(questionSet, userAnswers) {
                 if (j === currentQuestion.correct) {
                     choices[j].classList.add('user-correct');
                     scorePerQuestion[i].textContent = '20';
+                    finalScoreDisplay.textContent = finalScoreDisplay1; 
+                
                 } else {
                     choices[j].classList.add('incorrect-answer');
                     answerStatuses[j].classList.add('incorrect-status');
@@ -262,7 +264,7 @@ function populateReviewPage(questionSet, userAnswers) {
         const resourceLink = questionDiv.querySelector('.resource-link');
         if (resourceLink && currentQuestion.resource) {
             resourceLink.href = currentQuestion.resource;
-            resourceLink.textContent = "Read more here"; // Or use the URL
+            resourceLink.textContent = "Read more here"; 
         }
         
         // Always show explanation section for review page
@@ -274,9 +276,9 @@ function populateReviewPage(questionSet, userAnswers) {
 
 }
 
-function results() {
-    const savedAnswers = JSON.parse(localStorage.getItem('userAnswers'));
-    populateReviewPage(quizArray, savedAnswers);
+function results() {         
+    let savedAnswers = JSON.parse(localStorage.getItem('userAnswers'));          
+    populateReviewPage(quizArray, savedAnswers); 
 };
 
 document.getElementById('toggle-review')?.addEventListener('click', function() {
