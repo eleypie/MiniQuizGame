@@ -199,7 +199,6 @@ function showResults() {
 }
 
 //Review Answers 
-
 function populateReviewPage(questionSet, userAnswers) {
     // Loop through each question
     for (let i = 0; i < questionSet.length; i++) {
@@ -220,7 +219,6 @@ function populateReviewPage(questionSet, userAnswers) {
 
         // Populate choices and mark answers
         for (let j = 0; j < choices.length; j++) {
-            // Set choice text
             choiceTexts[j].textContent = currentQuestion.answers[j];
             
             // Reset classes and status
