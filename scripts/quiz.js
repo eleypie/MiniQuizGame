@@ -46,7 +46,7 @@ function startTimer() {
     clearInterval(countdown);
 
     if(!paused) {
-        quizTime = 5;
+        quizTime = 90;
     } else {
         quizTime = remainTime;
     }
