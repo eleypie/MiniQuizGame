@@ -1,34 +1,5 @@
 // script.js
 document.addEventListener('DOMContentLoaded', function() {
-    // Animate stats counting
-    // const statNumbers = document.querySelectorAll('.stat-number');
-    
-    // statNumbers.forEach(stat => {
-    //     const target = parseInt(stat.getAttribute('data-count'));
-    //     const duration = 2000;
-    //     const step = target / (duration / 16);
-    //     let current = 0;
-        
-    //     const updateCount = () => {
-    //         current += step;
-    //         if (current < target) {
-    //             stat.textContent = Math.floor(current);
-    //             requestAnimationFrame(updateCount);
-    //         } else {
-    //             stat.textContent = target;
-    //         }
-    //     };
-        
-    //     // Start animation when element is in viewport
-    //     const observer = new IntersectionObserver((entries) => {
-    //         if (entries[0].isIntersecting) {
-    //             updateCount();
-    //             observer.unobserve(stat);
-    //         }
-    //     });
-        
-    //     observer.observe(stat);
-    // });
 
     // Create floating particles
     const particlesContainer = document.querySelector('.particles');
