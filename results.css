@@ -78,6 +78,16 @@ body {
     box-shadow: 0 2px 6px rgba(184, 0, 31, 0.2);
 }
 
+@media(max-width: 768px) {
+    .quizmo-try-again-btn, .quizmo-quit-btn {
+        font-size: 0.65rem;
+    }
+
+    .quizmo-badge, .quizmo-logo {
+        font-size: 0.5rem;
+    }
+}
+
 .quizmo-quit-btn {
     background-color: #6c757d; /* Neutral color for quit button */
 }

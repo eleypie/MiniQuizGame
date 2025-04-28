@@ -44,16 +44,16 @@ function startTimer() {
     clearInterval(countdown);
 
     if(!paused) {
-        quizTime = 60;
+        quizTime = 90;
     } else {
         quizTime = remainTime;
     }
-    
+
     updateTimer();
 
     countdown = setInterval(() => {
         quizTime--;
-  
+
         if (quizTime < 0) {
             clearInterval(countdown);
             paused = false;
@@ -274,17 +274,11 @@ function populateReviewPage(questionSet, userAnswers) {
 
 }
 
-// Initialize when page loads
-window.onload = function() {
+function results() {
     const savedAnswers = JSON.parse(localStorage.getItem('userAnswers'));
     populateReviewPage(quizArray, savedAnswers);
-
-    
 };
 
-
-
-// Toggle answers review
 document.getElementById('toggle-review')?.addEventListener('click', function() {
     const reviewSection = document.getElementById('answers-review');
     if (reviewSection.style.display === 'none') {
@@ -329,14 +323,5 @@ function quitQuiz() {
 // Initialize Quiz
 document.addEventListener('DOMContentLoaded', () => {
     displayQuestion();
-    
-    // Add event listeners to answer buttons
-        // choices.forEach((button, index) => {
-        //     button.addEventListener('click', () => {
-        //         checkAnswer(index);
-        //         userAnswers[currentQuestionIndex] = index; // Store user's answer
-        //     });
-
-        // });
 });
 

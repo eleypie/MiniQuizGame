@@ -182,6 +182,12 @@ body {
     
 }
 
+@media(max-width: 768px) {
+    .hero-image {
+        margin-top: 8rem;
+    }
+}
+
 .quizmo {
     font-family: var(--font-heading);
     font-size: clamp(2.5rem, 5vw, 4rem);
