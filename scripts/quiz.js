@@ -111,9 +111,6 @@ function displayQuestion() {
     // Update progress
     numDisplay.textContent = currentQuestionIndex + 1;
     progressBar.style.width = `${((currentQuestionIndex + 1) / quizArray.length) * 100}%`;
-
-    // console.log("Current Question Index:", currentQuestionIndex);
-    // console.log("Current Question:", questionData.question);
 }
 
 function nextQuestion() {
@@ -141,12 +138,6 @@ function checkAnswer(selectedIndex) {
         currentScore += 20;
         scoreDisplay.textContent = currentScore;
         finalScore += 1; 
-    } else {
-        incorrectAnswers.push({
-            question: questionData.question,
-            userAnswer: questionData.answers[selectedIndex],
-            correctAnswer: questionData.answers[questionData.correct]
-        });
     }
 
     const choices = document.querySelectorAll('.choice-btn');
