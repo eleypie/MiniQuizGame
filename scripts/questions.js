@@ -117,7 +117,7 @@ const setQ4 = [
         question: "Why was the 2025 Philippine budget controversal?",
         answers: ["Massive cuts to education, health and calamity response", "Increased Military Spending", "Pork Barrel Scam", "Corruption"], 
         correct: 0,
-        explanation: "" ,
+        explanation: "People felt like the government doesn't care about them, instead choosing political goals instead of the people." ,
         resource: "https://thedefiant.net/the-2025-budget-controversy-highlights-filipino-politicians-continued-reliance-on-patronage-politics/"
 }, 
     {
