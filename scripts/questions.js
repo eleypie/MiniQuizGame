@@ -7,7 +7,7 @@ const setQ1 = [
     resource: "https://www.bbc.com/news/articles/cde7ng85jwgo"
 }, 
     {
-        question: "What happened on April 21,2025",
+        question: "What happened on April 21, 2025?",
         answers: ["Holy Week just ended", "Pope Francis declared who the new pope is", "Pope Francis died", "A new pope got elected"], 
         correct: 2,
         explanation: "Cardinal Kevin Farrell, Camerlengo of the Holy Roman Church, announced the death of Pope Francis." ,
