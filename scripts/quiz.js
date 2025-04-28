@@ -46,7 +46,7 @@ function startTimer() {
     clearInterval(countdown);
 
     if(!paused) {
-        quizTime = 90;
+        quizTime = 5;
     } else {
         quizTime = remainTime;
     }
@@ -94,11 +94,8 @@ function stopQuiz() {
 
 function timeExpired() {
     const currentQuestion = quizArray[currentQuestionIndex];
-    incorrectAnswers.push({
-        question: currentQuestion.question,
-        userAnswer: "Time Expired",
-        correctAnswer: currentQuestion.answers[currentQuestion.correct]
-    });
+    userAnswers[currentQuestionIndex] = null; // Store user's answer
+    localStorage.setItem('userAnswers', JSON.stringify(userAnswers)); // Save user answers
     nextQuestion();
 }
 
@@ -203,7 +200,6 @@ function showResults() {
 //Review Answers 
 
 function populateReviewPage(questionSet, userAnswers) {
-
     // Loop through each question
     for (let i = 0; i < questionSet.length; i++) {
         const currentQuestion = questionSet[i];
@@ -238,7 +234,7 @@ function populateReviewPage(questionSet, userAnswers) {
                 answerStatuses[j].classList.add('correct-status');
                 answerStatuses[j].textContent = 'Correct Answer';
             }
-            
+        
             // Mark user's answer
             if (j === userAnswers[i]) {
                 if (j === currentQuestion.correct) {
@@ -297,7 +293,10 @@ function exitQuiz() {
     window.location.href = "index.html";
 }
 
-window.restartQuiz = function() {
+function restartQuiz() {
+    localStorage.removeItem('userAnswers');
+    userAnswers.length = 0;
+
     currentQuestionIndex = 0;
     currentScore = 0;
     incorrectAnswers = [];
@@ -317,6 +316,11 @@ window.restartQuiz = function() {
     const resultsModal = bootstrap.Modal.getInstance(document.getElementById('resultsModal'));
     if (resultsModal) resultsModal.hide();
 };
+
+function tryAgain() {
+    window.location.href='quiz.html';
+    restartQuiz();
+}
 
 function quitQuiz() {
     window.location.href = '../index.html';
