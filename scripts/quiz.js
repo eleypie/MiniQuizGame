@@ -113,8 +113,8 @@ function displayQuestion() {
     numDisplay.textContent = currentQuestionIndex + 1;
     progressBar.style.width = `${((currentQuestionIndex + 1) / quizArray.length) * 100}%`;
 
-    console.log("Current Question Index:", currentQuestionIndex);
-    console.log("Current Question:", questionData.question);
+    // console.log("Current Question Index:", currentQuestionIndex);
+    // console.log("Current Question:", questionData.question);
 }
 
 function nextQuestion() {
