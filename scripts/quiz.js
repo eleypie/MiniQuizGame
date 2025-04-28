@@ -174,7 +174,8 @@ function showResults() {
     const percentage = (currentScore / (quizArray.length * 20)) * 100;
 
     // Set message
-    let message = percentage >= 80 ? "Hive Five! You're a Quizmo Champion!" :
+    let message = percentage >= 100 ? "High Five! You're a Quizmo Champion!" :
+                 percentage >= 80 ? "Wow! You're a Quizmo Expert!" :
                  percentage >= 50 ? "Good Job! You're getting there!" :
                  "Keep practicing! You'll do better next time!";
 
